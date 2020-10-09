@@ -1,7 +1,7 @@
 <template>
    <div class="nav">
         <ul>
-            <router-link tag="li" exact to="/film/nowplaying" active-class="active">
+            <router-link tag="li" to="/film/nowplaying" active-class="active">
                 <span>正在热映</span>
             </router-link>
             <router-link tag="li" to="/film/comingsoon" active-class="active">
@@ -11,7 +11,8 @@
      </div>
 </template>
 
-<style lang="scss">
+
+<style lang="scss" scoped>
 .nav {
     width: 100%;
     height: 50px;
@@ -35,4 +36,5 @@
         }
     }
 }
+</style>
 </style>

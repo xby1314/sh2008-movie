@@ -15,7 +15,7 @@
             </router-link> -->
             <router-link to="/center" active-class="active" tag="li">
                 <i class="iconfont icongeren"></i>
-                <p>个人</p>
+                <p>我的</p>
             </router-link>
         </ul>
     </div>
@@ -23,7 +23,7 @@
 
 <script>
 // import导入样式
-import "@/assets/iconfont/iconfont.css";
+import"@/assets/iconfont/iconfont.css";
 
 export default {
     data() {
@@ -35,7 +35,7 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
-    position: fixed;
+     position: fixed;
     bottom: 0;
     left: 0;
     border-top: 1px solid #ccc;
@@ -49,14 +49,15 @@ export default {
         display: flex;
         align-items: center;
         li {
-            margin-top: 5px;
+            margin-top: 2px;
+            
             flex: 1;
             height: 43px;
             &.active {
                 color: #fe5100;
             }
             p {
-                margin-top: 2px;
+                margin-top:2px;
             }
             i {
                 font-size: 20px;
