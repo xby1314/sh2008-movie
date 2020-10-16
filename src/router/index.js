@@ -41,14 +41,14 @@ router.beforeEach((to, from, next) => {
   let arr = [
     //  存需要登录的页面地址
     "/cinema",
-    // "/film"
+    // "/film/nowplaying",
   ]
   if (arr.includes(to.path)) {
     // 返回真则在(需要登录判断)
     if (localStorage.getItem("_token")) {
       next()
     } else {
-      next({ path: '/login', query: { refer: encodeURI(to.fullpath) } })
+      next({ path: '/login', query: { refer: encodeURI(to.fullPath) } })
     }
   } else {
     // 不在(需要登录)
