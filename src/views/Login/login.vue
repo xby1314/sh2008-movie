@@ -100,6 +100,7 @@ export default {
                     //   this.$router.push({path:'/center'})
                     if(this.$router.query.refer){
                         this.$router.push({path:decodeURI(this.$router.push({path:'/center'}))})
+                       
                     }else{
                         this.$router.push({path:'/center'})
                     }
