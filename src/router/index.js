@@ -10,6 +10,7 @@ import detailRouter from './routes/detail'
 import cityRouter from './routes/city'
 import vuexRouter from './routes/vuex'
 import loginRouter from './routes/login'
+import settingRouter from './routes/setting'
 Vue.use(VueRouter)
 
 const routes = [
@@ -26,8 +27,8 @@ const routes = [
   detailRouter,
   cityRouter,
   vuexRouter,
-  loginRouter
-
+  loginRouter,
+  settingRouter
 ]
 
 const router = new VueRouter({

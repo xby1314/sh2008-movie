@@ -13,7 +13,7 @@ export const GatewayUrl = "gateway?k=3546373&cityId="
 // 城市数据
 export const cityListUrl = "gateway?k=1566502";
 
-// 我的(个人中心)相关的接口
+// 我的(个人中心)相关的接口   /127.0.0.1   47.98.44.36/
 export const loginUrl = "http://127.0.0.1:3000/api/v1/login";
 export const centerUrl = "http://127.0.0.1:3000/api/v1/user_info"
 

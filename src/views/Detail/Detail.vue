@@ -1,5 +1,6 @@
 <template>
   <div class="detail">
+    <div class="scroll">
     <div class="img">
       <img v-lazy="film.poster"/>
       <div class="goBack" @click="goBack">
@@ -10,7 +11,9 @@
       </div>
     </div>
     <div class="film-detail">
-      <div class="name">{{ film.name }}<span class="item">{{film.filmType.name}}</span></div>
+      <div class="film-name">
+        <span class="name">{{ film.name }}</span>
+        <span class="item">{{film.filmType.name}}</span></div>
       <div class="category">{{ film.category }}</div>
       <div class="premiereAt">{{ film.premiereAt | parsePremiereAt }}上映</div>
       <div class="nation">{{ film.nation }} | {{ film.runtime }} 分钟</div>
@@ -39,7 +42,7 @@
             :key="index"
           >
             <div class="actors-img">
-              <img :src="item.avatarAddress" />
+              <img :src="item.avatarAddress"/>
             </div>
             <span class="actor-name">{{ item.name }}</span>
             <span class="actor-role">{{ item.role }}</span>
@@ -66,6 +69,7 @@
         </Swiper>
       </div>
     </div>
+    </div>
   </div>
 </template>
 <script>
@@ -81,7 +85,6 @@ export default {
   },
   async mounted() {
     let ret = await moiveDetailData(this.$route.params.filmId);
-    console.log(ret.data.data.film);
     this.film = ret.data.data.film;
   },
   filters: {
@@ -117,7 +120,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .detail {
+  .scroll{
+    overflow-x: hidden;
+  }
   .img {
     width: 100%;
     height: 210px;
@@ -136,13 +143,16 @@ export default {
       }
     }
   }
-  .film-detail {
-    padding: 15px;
-    padding-top: 12px;
-    background-color: #fff;
-    border-bottom: 10px solid rgb(244, 244, 244);
+.film-detail {
+  padding: 15px;
+  padding-top: 12px;
+  background-color: #fff;
+  border-bottom: 10px solid rgb(244, 244, 244);
+.film-name {
+	width: 256px;
+}
   .item {
-	font-size: 9px;
+  font-size: 9px;
 	color: #fff;
 	background-color: #d2d6dc;
 	height: 14px;
@@ -151,12 +161,14 @@ export default {
 	border-radius: 2px;
 	display: inline-block;
 }
+
     .name {
       color: #191a1b;
       font-size: 18px;
       height: 24px;
       line-height: 24px;
       margin-right: 7px;
+     
     }
     .category {
       font-size: 13px;

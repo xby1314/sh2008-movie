@@ -8,7 +8,9 @@ export default new Vuex.Store({
         count: 0,
         city: '',
         // 如果有更多的数据需要存储记这些就完了
-        _token: ""
+        _token: "",
+        cityId: '',
+        clickName: ''
     },
     mutations: {
         add: function (state, step) {

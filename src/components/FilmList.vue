@@ -7,8 +7,11 @@
                 <img :src="item.poster" />
             </div>
             <div class="middle">
-                <div class="info-col">{{ item.name }}</div>
-                <div v-if="type == 1">
+                <div class="info-col">
+                    <span class="name">{{ item.name }}</span>
+                    <span class="item">{{item.filmType.name}}</span>
+                    </div>
+                <div v-if="type == 1 && item.grade!=undefined">
                     <span>观众评分 </span>
                     <span class="grade">{{ item.grade }}</span>
                 </div>
@@ -63,9 +66,11 @@ export default {
         //  处理演员的数据，讲主演的数据从数组形式中
         parseActors: function(value) {
             let actors = "";
-            value.forEach((element) => {
-                actors += element.name + " ";
-            });
+            if (value) {
+                value.forEach((element) => {
+                    actors += element.name + " ";
+                });
+            }
             return actors;
         },
           parsePremiereAt: function(value){
@@ -153,9 +158,9 @@ export default {
             height: 100%;
         }
     }
+
    .info-col {
 	overflow: hidden;
-	-o-text-overflow: ellipsis;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	width: 100%;
@@ -178,6 +183,28 @@ export default {
             text-overflow: ellipsis;
             white-space: nowrap;
         }
+    .name {
+	max-width: calc(100% - 25px);
+	color: #191a1b;
+	font-size: 16px;
+	height: 22px;
+	line-height: 22px;
+	margin-right: 5px;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+    .item{
+	font-size: 9px;
+	color: #fff;
+    display: inline-block;
+	background-color: #d2d6dc;
+	height: 14px;
+	line-height: 14px;
+	padding: 0 2px;
+	border-radius: 2px;
+}
        
     }
      .grade {
@@ -189,7 +216,7 @@ export default {
         width: 15%;
         display: flex;
         align-items: center;
-        margin-right: 20px;
+        padding-left: 20px;
 
         span {
             border: 1px solid #ff5f16;

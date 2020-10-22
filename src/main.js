@@ -7,6 +7,16 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 Vue.config.productionTip = false
+import AMap from 'vue-amap';
+Vue.use(AMap);
+// 初始化vue-amap
+AMap.initAMapApiLoader({
+  // 高德key
+  key: 'e2c51a54f2e68226412eb113b5091e9c',
+  // 插件集合 （插件按需引入）
+  plugin: ['AMap.Geolocation'],
+  v: '1.4.4',
+});
 // axios 体验
 // 导入axios
 import axios from "axios"

@@ -12,6 +12,7 @@ export default {
         },
         {
             path: '/film',
+            // 路由重定向
             redirect: 'nowplaying'
         }
     ]

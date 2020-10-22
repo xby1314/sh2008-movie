@@ -18,11 +18,6 @@ axios.interceptors.request.use(function (config) {
         host = "mall.film-ticket.film.info";
 
     }
-
-    if (info == "cinema") {
-        host = "mall.film-ticket.cinema.list";
-
-    }
     if (info == "city") {
         host = "mall.film-ticket.city.list";
 
